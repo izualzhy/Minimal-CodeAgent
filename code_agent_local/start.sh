@@ -75,7 +75,7 @@ start_mcp_servers() {
     fi
     
     # start MCP servers (background running)
-    python3 mcp_servers.py &
+    python3 streamable_mcp_servers.py &
     MCP_PID=$!
     
     # wait for servers to start

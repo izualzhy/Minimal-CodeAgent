@@ -29,7 +29,10 @@ from .mcp_tools import (
     read_file, write_file, delete_file, execute_python_code, 
     run_system_command, 
     start_interative_shell, run_interactive_shell, kill_shell_session,
-    safe_commands
+    safe_commands,
+    # Uncomment if you want to add MCP tools
+    # create_python_interpreter_toolset(),
+    # create_file_operations_toolset(),
 )
 
 # import litellm
@@ -45,6 +48,9 @@ ALL_TOOLS = [
     start_interative_shell,
     run_interactive_shell,
     kill_shell_session,
+    # Uncomment if you want to add MCP tools
+    # create_python_interpreter_toolset(),
+    # create_file_operations_toolset(),
 ]
 
 # Configure logging

@@ -170,7 +170,7 @@ try:
     from google.adk.tools.mcp_tool.mcp_toolset import MCPToolset
 except Exception:  
     from google.adk.tools.mcp_tool.mcp_toolset import McpToolset as MCPToolset
-from google.adk.tools.mcp_tool.mcp_session_manager import SseServerParams
+from google.adk.tools.mcp_tool.mcp_session_manager import SseServerParams, StreamableHTTPServerParams
 from pydantic import BaseModel
 import logging
 import pexpect
@@ -860,7 +860,7 @@ def kill_shell_session(tool_context: ToolContext, session_id: str) -> Dict[str, 
 def create_python_interpreter_toolset():
     """Create Python interpreter MCP toolset"""
     return MCPToolset(
-        connection_params=SseServerParams(
+        connection_params=StreamableHTTPServerParams(
             url=PYTHON_INTERPRETER_MCP_URL,
             sse_read_timeout=MCP_SSE_TIMEOUT
         )
@@ -869,7 +869,7 @@ def create_python_interpreter_toolset():
 def create_file_operations_toolset():
     """Create file operations MCP toolset"""
     return MCPToolset(
-        connection_params=SseServerParams(
+        connection_params=StreamableHTTPServerParams(
             url=FILE_OPERATIONS_MCP_URL,
             sse_read_timeout=MCP_SSE_TIMEOUT
         )
